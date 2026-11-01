@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Blog list</h1>
+    <p>{{today}}</p>
+
+    <!-- if condition  -->
+
+    {% if blogs.1.is_featured %}
+    <h2>Featured blog{{blogs.1.title}}</h2>
+    {% else %}
+    <h2>No featured{{blogs.1.title}}</h2>
+    {% endif %}
+
+    <!-- for loop  -->
+
+    <ul>
+        {% for blog in blogs %}
+        <li>{{forloop.counter}}.{{blog.title}} - {{blog.author}}</li>
+        {% empty %}
+        <li> no blogs available</li>
+        {% endfor %}
+    </ul>
+
+    <!-- with condition  -->
+
+    {% with total_blogs=blogs|length %}
+    <p>Total blogs: {{total_blogs}}</p>
+    {% endwith %}
+    <hr>
+    <!-- cycle -->
+
+    <h2>Blogs in table</h2>
+
+   
+<table border="1" cellpadding="5" cellspacing="0">
+    {% for blog in blogs %}
+    <tr style="background-color: {% cycle 'lightblue' 'lightgreen' %}">
+        <td>{{ forloop.counter }}</td>
+        <td>{{ blog.title }}</td>
+        <td>{{ blog.author }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+      
+    </table>
+
+</body>
+
+</html>

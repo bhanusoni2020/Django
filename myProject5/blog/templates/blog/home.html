@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1cTemplate Basic</title>
+</head>
+<body>
+    <h1>Template basic</h1>
+  
+
+    <p>This is a simple template to demonstrate basic HTML structure </p>
+    <p>Wellcome to the blog home page</p>
+
+    <p>Name:{{name}}</p>
+    <p>Age:{{age}}</p>
+    <!-- List access  -->
+     <p>First Skill: {{skill.0}}</p>
+     <p>Skill: {{skill}}</p>
+    
+    <!-- Obj attribute -->
+     <p>User Name:{{name}}</p>
+     <p>User Age:{{age}}</p> 
+
+     <!-- Disc -->
+      <h2>Blog information</h2>
+      <p>Title:{{blog.title}}</p>
+      <p>Create At: {{blog.created_at}}</p>
+      <p>Author Name: {{blog.Author}}</p>
+
+    <p>Content:{{blog.content}}</p>
+    <p>Content:{{blog.content | safe}}</p>
+
+    <!-- Default value -->
+     <p>Default Emapty value: {{empty_Value | default:"No deta provided"}}</p>
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

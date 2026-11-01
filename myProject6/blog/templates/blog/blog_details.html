@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#2 templates</title>
+</head>
+<body>
+    <h1>This is second template section</h1>
+    <p><b>Title:</b>{{post.title}}</p>
+    <p><b>Title in upper case:</b>{{post.title |upper}}</p>
+    <p><b>Title in lower case:</b>{{post.title |lower}}</p>
+    <p><b>Title in lower case:</b>{{post.title |truncatechars:10}}</p>
+    <hr>
+    <!-- Addition -->
+    <p><b>Original Price:</b>{{post.price}}</p>
+    <p><b>Original Price:</b>{{post.price  | add:5}}</p>
+    <hr>
+    <!-- Division -->
+     {% if post.number|divisibleby:2 %}
+    <p>{{post.number}} is even</p>
+    {% else %}
+    <p>{{post.number}} is odd</p>
+     {% endif %}
+
+    <!-- list filter -->
+
+    <p><b>Title Normal:</b>{{post.tags|last}}</p>
+    <p><b>Title Normal:</b>{{post.tags|length}}</p>
+    <p><b>Slice(irst 2):</b>{{post.tags|slice:2}}</p>
+    <p><b>join tags:</b>{{post.tags|join:","}}</p>
+
+    <hr>
+    <p>Author Available?:{{post.author|yesno:"Yes,No,MayBe"}}</p>
+    <p>Comments cnt: {{post.comments_count}} comment</p>
+    <p>formate Date:{{post.created_at|date:"D d M Y"}}</p>
+    <p>Time only: {{post.created_at|time:"H:i"}}</p>
+    <hr>
+    <p>Title Encoding:{{post.title|urlencode}}</p>
+    <p>float formate example:{{123.456789|floatformat:1}}</p>
+
+
+
+
+</body>
+</html>
