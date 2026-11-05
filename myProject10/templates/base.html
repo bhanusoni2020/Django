@@ -3,9 +3,11 @@
 
 <head>
     <title>{% block title %}My title{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     {% load static %}
     {% block static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -14,18 +16,20 @@
 
 <body>
     <div class="content">
-        <button class="btn-solid btn-styled theme-primary">Primary</button>
-        <button class="btn-solid btn-styled theme-accent">Accent</button>
-        <button class="btn-solid btn-styled theme-success">Success</button>
-        <button class="btn-solid btn-styled theme-danger">Danger</button>
-        <button class="btn-solid btn-styled theme-warning">Warning</button>
-        <button class="btn-solid btn-styled theme-info">Info</button>
-        <button class="btn-solid btn-styled theme-inverse">Inverse</button>
-        <button class="btn-solid btn-styled theme-secondary">Secondary</button>    
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-light">Accent</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-dark">Inverse</button>
+        <button class="btn btn-secondary">Secondary</button>
         {% block content %}
         <h1>My Site</h1>
         {% endblock %}
-        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" -->
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
 
     </div>
 </body>
